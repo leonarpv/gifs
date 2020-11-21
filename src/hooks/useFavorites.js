@@ -1,11 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useQuery, queryCache } from "react-query";
+import { useMemo } from "react";
+import { useQuery } from "react-query";
 import { KEY_FAVORITES } from "../utils/constants";
+import useLocalStorage from "./useLocalStorage";
 
 export const isEmptyList = (list) => !list || list.length === 0;
 
 export default function useFavorites() {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorage(KEY_FAVORITES, []);
 
   const initialRepositories = useMemo(() => favorites, []);
 

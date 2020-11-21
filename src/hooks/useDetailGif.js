@@ -1,4 +1,3 @@
-import React, { useEffect, useState, useMemo } from "react";
 import { useQuery, queryCache } from "react-query";
 import { KEY_GIF } from "../utils/constants";
 import { fetchGif } from "../fetchers";

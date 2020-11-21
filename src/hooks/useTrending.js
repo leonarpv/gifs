@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery, queryCache } from "react-query";
-import { KEY_GIFS, KEY_TRENDINGS } from "../utils/constants";
+import { useQuery } from "react-query";
+import { KEY_TRENDINGS } from "../utils/constants";
 import { fetchTrending } from "../fetchers";
+import useFavorites from "./useFavorites";
 
 const getTrendingByParams = async (key, params) => fetchTrending(params);
 export default function useTrending() {
   const { query } = useParams();
-
+  const { data: favorites } = useFavorites();
   const queryKey = useMemo(
     () => [
       KEY_TRENDINGS,
@@ -20,7 +21,18 @@ export default function useTrending() {
 
   const initialQueryKey = useMemo(() => queryKey, []);
 
-  return useQuery(queryKey, getTrendingByParams, {
-    initialData: initialQueryKey,
-  });
+  const { isFetching, isError, data, refetch } = useQuery(
+    queryKey,
+    getTrendingByParams,
+    {
+      initialData: initialQueryKey,
+    }
+  );
+
+  return {
+    isFetching,
+    isError,
+    data,
+    refetch,
+  };
 }
