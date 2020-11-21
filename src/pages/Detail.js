@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import useGif from "../hooks/useTrending";
+import useGif from "../hooks/useGif";
 export const Detail = ({ ...rest }) => {
   const { isFetching, isError, data, refetch } = useGif();
 
