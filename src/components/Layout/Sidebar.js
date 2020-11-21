@@ -9,7 +9,7 @@ export const Sidebar = ({ ...rest }) => {
       <ul>
         {isFetching && <li>Cargando</li>}
         {isError && <li>Ocurió un error</li>}
-        {!isFetching && !isError && (
+        {!isFetching && (
           <>
             {data.length &&
               data.map((gif, key) => (

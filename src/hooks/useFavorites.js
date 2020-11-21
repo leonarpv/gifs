@@ -12,5 +12,9 @@ export default function useFavorites() {
 
   return useQuery(KEY_FAVORITES, favorites, {
     initialData: initialRepositories,
+    onError: (error, _newPost, rollback) => {
+      console.error(error);
+      if (rollback) rollback();
+    },
   });
 }

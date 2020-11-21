@@ -1,12 +1,12 @@
 import { useMutation, queryCache } from "react-query";
 import { KEY_FAVORITES } from "../utils/constants";
 import useLocalStorage from "./useLocalStorage";
-const preventDuplocity = (from, add) => from.filter((f) => f.id !== add.id);
+const preventDuplicity = (from, add) => from.filter((f) => f.id !== add.id);
 export default function useAdFavorite() {
   const [favorites, setFavorites] = useLocalStorage(KEY_FAVORITES, []);
   return useMutation(
     (gif) => {
-      return setFavorites([...preventDuplocity(favorites, gif), gif]);
+      return setFavorites([...preventDuplicity(favorites, gif), gif]);
     },
 
     {
@@ -15,7 +15,7 @@ export default function useAdFavorite() {
 
         if (queryCache.getQueryData(KEY_FAVORITES)) {
           queryCache.setQueryData(KEY_FAVORITES, (old) => [
-            ...preventDuplocity(old, newFavorite),
+            ...preventDuplicity(old, newFavorite),
             newFavorite,
           ]);
         }
