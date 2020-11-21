@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import useFavorites from "../../../hooks/useFavorites";
 import useAdFavorite from "../../../hooks/useAdFavorite";
 
-export default function ItemFav({ id }) {
+export default function ItemFav({ gif }) {
   const { data } = useFavorites();
   const [addFavorite, addFavoriteInfo] = useAdFavorite();
-  const isFaved = data.some((fav) => fav.id === id);
+  const isFaved = data.some((fav) => fav.id === gif.id);
 
   const [label, emoji] = isFaved
     ? ["Remove Gif from favorites", "❌"]
@@ -13,7 +13,7 @@ export default function ItemFav({ id }) {
 
   return (
     <>
-      <button onClick={() => addFavorite(id)}>
+      <button onClick={() => addFavorite(gif)}>
         <span aria-label={label} role="img">
           {emoji}
         </span>

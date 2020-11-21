@@ -12,13 +12,20 @@ export const SearchBox = ({ placeholder, handleSubmit, initialValue }) => {
 
   return (
     <form onSubmit={onHandleSubmit}>
-      <input
-        type="search"
-        className="search"
-        value={value}
-        placeholder={placeholder}
-        onChange={onHandleSetValue}
-      />
+      <div className="input-group">
+        <input
+          type="text"
+          className="search-query form-control"
+          value={value}
+          placeholder={placeholder}
+          onChange={onHandleSetValue}
+        />
+        <span className="input-group-btn">
+          <button type="button" disabled>
+            <span className="fa fa-search"></span>
+          </button>
+        </span>
+      </div>
     </form>
   );
 };
