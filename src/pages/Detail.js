@@ -1,7 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
-import useGif from "../hooks/useGif";
+import React from "react";
+import { Gif } from "@giphy/react-components";
+import { useParams } from "react-router-dom";
+import useDetailGif from "../hooks/useDetailGif";
 export const Detail = ({ ...rest }) => {
-  const { isFetching, isError, data, refetch } = useGif();
+  const { id } = useParams();
+  const { isFetching, isError, data, refetch } = useDetailGif(id);
 
-  return <div>{isFetching ? <div>Cargando</div> : <div>Tengo data</div>}</div>;
+  return (
+    <div>
+      {isFetching && <div>Cargando</div>}
+      {isError && <div>Ocurió un error</div>}
+      {!isFetching && <Gif gif={data} />}
+    </div>
+  );
 };

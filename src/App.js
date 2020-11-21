@@ -6,7 +6,7 @@ import { Home, Search, Detail } from "./pages";
 
 const overrides = {
   queries: {
-    suspense: true,
+    suspense: false,
   },
   mutations: {
     suspense: false,
