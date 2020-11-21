@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery, queryCache } from "react-query";
+import { useQuery } from "react-query";
 import { KEY_GIFS } from "../utils/constants";
 import { fetchGifs } from "../fetchers";
 

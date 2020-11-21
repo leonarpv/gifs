@@ -2,9 +2,9 @@ import React from "react";
 import { Gif } from "@giphy/react-components";
 import { useParams } from "react-router-dom";
 import useDetailGif from "../hooks/useDetailGif";
-export const Detail = ({ ...rest }) => {
+export const Detail = () => {
   const { id } = useParams();
-  const { isFetching, isError, data, refetch } = useDetailGif(id);
+  const { isFetching, isError, data } = useDetailGif(id);
 
   return (
     <div>
