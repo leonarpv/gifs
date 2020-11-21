@@ -10,9 +10,6 @@ export default function Item({ title, id, images, image = "original" }) {
       </div>
       <Link to={`/gif/${id}`}>
         <h4>{title}</h4>
-        {images[image] && (
-          <img loading="lazy" alt={title} src={images[image].url} />
-        )}
       </Link>
     </div>
   );
