@@ -5,13 +5,13 @@ export const TYPES = {
 };
 
 export const contextInitialState = {
-  darkMode: false,
+  favorites: [],
 };
 
 export const contextStateReducer = (state, { type, payload }) => {
   switch (type) {
     case TYPES.ADD_FAVORITE: {
-      return regularSetter(state, "addFavorite", payload);
+      return regularSetter(state, "favorites", payload);
     }
     case TYPES.RESET: {
       return { ...contextInitialState };

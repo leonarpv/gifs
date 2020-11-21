@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import useFavorites from "../../../hooks/useFavorites";
-import useAdFavorite from "../../../hooks/useAdFavorite";
+
+import useUserContext from "../../../hooks/useUserContext";
 
 export default function ItemFav({ gif }) {
-  const { data } = useFavorites();
-  const [addFavorite, addFavoriteInfo] = useAdFavorite();
-  const isFaved = data.some((fav) => fav.id === gif.id);
+  const { favorites, saveFavorite } = useUserContext();
+  const isFaved = favorites.some((fav) => fav.id === gif.id);
 
   const [label, emoji] = isFaved
     ? ["Remove Gif from favorites", "❌"]
@@ -13,7 +12,7 @@ export default function ItemFav({ gif }) {
 
   return (
     <>
-      <button onClick={() => addFavorite(gif)}>
+      <button onClick={() => saveFavorite(gif)}>
         <span aria-label={label} role="img">
           {emoji}
         </span>

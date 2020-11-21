@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import { KEY_TRENDINGS } from "../utils/constants";
+import { useQuery, queryCache } from "react-query";
+import { KEY_GIFS, KEY_TRENDINGS } from "../utils/constants";
 import { fetchTrending } from "../fetchers";
 import useFavorites from "./useFavorites";
 

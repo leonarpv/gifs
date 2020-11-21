@@ -1,6 +1,4 @@
-import { useSiteDispatch } from './useSiteDispatch';
-import { useSiteState } from './useSiteState';
+import { useGifDispatch } from "./useGifDispatch";
+import { useGifState } from "./useGifState";
 
-export {
-  useSiteDispatch, useSiteState,
-};
+export { useGifDispatch, useGifState };

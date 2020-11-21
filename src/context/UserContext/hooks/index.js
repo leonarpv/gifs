@@ -1,6 +1,4 @@
-import { useSiteDispatch } from './useSiteDispatch';
-import { useSiteState } from './useSiteState';
+import { useUserDispatch } from "./useUserDispatch";
+import { useUserState } from "./useUserState";
 
-export {
-  useSiteDispatch, useSiteState,
-};
+export { useUserDispatch, useUserState };
