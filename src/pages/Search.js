@@ -1,6 +1,6 @@
 import React from "react";
 import ItemList from "../components/common/ItemList";
-import { Layout } from "../components/Layout/Layout";
+import { Layout } from "../components/Layout";
 import useSearchGifContextt from "../hooks/useSearchGifContext";
 
 export const Search = () => {

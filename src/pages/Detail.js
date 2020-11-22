@@ -1,7 +1,7 @@
 import React from "react";
 import { Gif } from "@giphy/react-components";
 import useDetailGifContext from "../hooks/useDetailGifContext";
-import { Layout } from "../components/Layout/Layout";
+import { Layout } from "../components/Layout";
 
 export const Detail = () => {
   const { loading, gif } = useDetailGifContext();
