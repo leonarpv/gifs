@@ -1,14 +1,15 @@
 import React from "react";
 import Item from "./../Item";
+import { ItemListWrapper } from "./styled";
 
 export default function ItemList({ items }) {
   return (
-    <div className="gifs">
+    <ItemListWrapper>
       {items ? (
         items.map((item) => <Item key={item.id} gif={item} />)
       ) : (
         <div>trending</div>
       )}
-    </div>
+    </ItemListWrapper>
   );
 }

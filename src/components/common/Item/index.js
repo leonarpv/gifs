@@ -1,20 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ItemFav from "../ItemFav";
+import { ItemWrapper, ItemInfoWrapper, ItemInfo, ItemImage } from "./styled";
 
 export default function Item({ gif }) {
-  const { title, id, images, image = "original" } = gif;
+  const { title, id, images, bitlyUrl, image = "original" } = gif;
   return (
-    <div>
-      <div>
-        <ItemFav gif={gif} />
-      </div>
+    <ItemWrapper>
       <Link to={`/gif/${id}`}>
-        <h4>{title}</h4>
+        <ItemInfoWrapper>
+          <ItemInfo>
+            <h1>{title}</h1>
+          </ItemInfo>
+        </ItemInfoWrapper>
         {images[image] && (
-          <img loading="lazy" alt={title} src={images[image].url} />
+          <ItemImage
+            className="loaded-image"
+            loading="lazy"
+            alt={title}
+            src={images[image].url}
+          />
         )}
       </Link>
-    </div>
+    </ItemWrapper>
   );
 }

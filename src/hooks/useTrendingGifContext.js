@@ -15,7 +15,7 @@ export default function useTrendingGifContext() {
   const refetch = useCallback(async () => {
     setloading(true);
     try {
-      setTrendings(await getTrendingByParams({ q: query }));
+      setTrendings(await getTrendingByParams({ q: query, limit: 20 }));
       setloading(false);
     } catch (error) {
       setloading(false);
