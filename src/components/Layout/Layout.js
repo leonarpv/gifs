@@ -1,10 +1,8 @@
 import React from "react";
-
 import { Sidebar, SearchBar } from "../common";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Page from "./components/Page";
-import useUserContext from "../../hooks/useUserContext";
 import Burger from "../common/Burger";
 import { useUserDispatch, useUserState } from "../../context/UserContext/hooks";
 

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import useUserContext from "../../../hooks/useUserContext";
 
 export default function ItemFav({ gif }) {

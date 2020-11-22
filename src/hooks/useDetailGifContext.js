@@ -7,7 +7,7 @@ const getGif = async (id) => fetchGif(id);
 
 export default function useDetailGifContext() {
   const { id } = useParams();
-  const { gif, gifs } = useGifState();
+  const { gif } = useGifState();
   const { setGif } = useGifDispatch();
   const [loading, setloading] = useState(false);
   const [error, setError] = useState(false);
@@ -30,7 +30,6 @@ export default function useDetailGifContext() {
     return () => console.log("prueba");
   }, [id]);
 
-  console.log("fetch");
   return {
     loading,
     gif,

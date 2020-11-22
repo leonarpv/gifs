@@ -20,11 +20,11 @@ export default function useSearchGifContext() {
       setloading(false);
       setError(true);
     }
-  }, [query, setloading, setError]);
+  }, [query, setloading, setError, setGifs]);
 
   useEffect(async () => {
     await refetch();
-  }, []);
+  }, [refetch]);
   return {
     loading,
     gifs,

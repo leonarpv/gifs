@@ -22,7 +22,7 @@ const useLocalStorage = (key, initialValue) => {
     try {
       localStorage.setItem(key, serializedState);
     } catch {}
-  }, [serializedState]);
+  }, [serializedState, key]);
 
   return [state, setState];
 };
