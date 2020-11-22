@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
 import useSearchGifContext from "../../../hooks/useSearchGifContext";
-import { SearchBox } from "./components";
+import { SearchBox } from "./SearchBox";
+import { StyledSearchBar } from "./styled";
 
 export const SearchBar = () => {
   const { loading, refetch } = useSearchGifContext();
@@ -11,5 +12,9 @@ export const SearchBar = () => {
     push(`/search/${value}`);
     refetch();
   };
-  return <SearchBox initialValue={query} handleSubmit={onHandleSubmit} />;
+  return (
+    <StyledSearchBar>
+      <SearchBox initialValue={query} handleSubmit={onHandleSubmit} />
+    </StyledSearchBar>
+  );
 };

@@ -18,8 +18,9 @@ export const Layout = ({ children, history, match, ...rest }) => {
       <Sidebar open={sidebarOpen} />
       <Burger open={sidebarOpen} setOpen={openSidebar} />
       <SearchBar />
-      {children}
+
       <Footer />
     </Page>
   );
 };
+//  {children}

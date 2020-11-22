@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledSearchBox, StyledSearchForm, StyledSearchInput } from "./styled";
 
 export const SearchBox = ({ placeholder, handleSubmit, initialValue }) => {
   const [value, setValue] = React.useState(initialValue, "");
@@ -11,21 +12,16 @@ export const SearchBox = ({ placeholder, handleSubmit, initialValue }) => {
   const onHandleSetValue = (e) => setValue(e.target.value);
 
   return (
-    <form onSubmit={onHandleSubmit}>
-      <div className="input-group">
-        <input
+    <StyledSearchBox>
+      <StyledSearchForm onSubmit={onHandleSubmit}>
+        <StyledSearchInput
           type="text"
           className="search-query form-control"
           value={value}
           placeholder={placeholder}
           onChange={onHandleSetValue}
         />
-        <span className="input-group-btn">
-          <button type="button" disabled>
-            <span className="fa fa-search"></span>
-          </button>
-        </span>
-      </div>
-    </form>
+      </StyledSearchForm>
+    </StyledSearchBox>
   );
 };
