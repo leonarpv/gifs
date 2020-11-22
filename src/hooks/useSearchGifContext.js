@@ -4,7 +4,7 @@ import { fetchGifs } from "../fetchers";
 import { useGifState, useGifDispatch } from "../context/GifContext/hooks";
 const getGifsByParams = async (params) => fetchGifs(params);
 
-export default function useSearchGifsContex() {
+export default function useSearchGifContext() {
   const { gifs } = useGifState();
   const { setGifs } = useGifDispatch();
   const { query } = useParams();

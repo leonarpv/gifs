@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-import useSearchGifsContex from "../../hooks/useSearchGifsContext";
+import useSearchGifContext from "../../hooks/useSearchGifContext";
 import useUserContext from "../../hooks/useUserContext";
 import { SearchBox } from "../common/SearchBox";
 export const Sidebar = () => {
   const { favorites } = useUserContext();
-  const { loading, refetch } = useSearchGifsContex();
+  const { loading, refetch } = useSearchGifContext();
   const history = useHistory();
   const { query } = useParams();
   const onHandleSubmit = (value) => {

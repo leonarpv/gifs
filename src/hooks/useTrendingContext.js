@@ -5,7 +5,7 @@ import { useGifState, useGifDispatch } from "../context/GifContext/hooks";
 
 const getTrendingByParams = async (params) => fetchTrending(params);
 
-export default function useTrendingContext() {
+export default function useTrendingGifContext() {
   const { trendings } = useGifState();
   const { setTrendings } = useGifDispatch();
   const { query } = useParams();

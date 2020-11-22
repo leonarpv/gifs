@@ -1,10 +1,10 @@
 import React from "react";
 import ItemList from "../components/common/ItemList";
 import { Layout } from "../components/Layout/Layout";
-import useSearchGifsContext from "../hooks/useSearchGifsContext";
+import useSearchGifContextt from "../hooks/useSearchGifContext";
 
 export const Search = () => {
-  const { loading, gifs } = useSearchGifsContext();
+  const { loading, gifs } = useSearchGifContextt();
 
   return (
     <Layout title={"Search"}>
