@@ -1,6 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-const Footer = () => <footer></footer>;
+import styled from "styled-components";
+const Subject = styled.div`
+  text-align: center;
+`;
+const Footer = () => (
+  <footer>
+    <Subject>©{new Date().getFullYear()} | leonarpv</Subject>
+  </footer>
+);
 
 export default Footer;
