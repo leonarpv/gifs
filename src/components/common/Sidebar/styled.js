@@ -17,7 +17,11 @@ const StyledSidebar = styled.nav`
   @media (max-width: 576px) {
     width: 100%;
   }
-
+  ul {
+    li {
+      margin: 20px;
+    }
+  }
   a {
     font-size: 2rem;
     text-transform: uppercase;

@@ -14,7 +14,7 @@ export default function useSearchGifContext() {
   const refetch = useCallback(async () => {
     setloading(true);
     try {
-      setGifs(await getGifsByParams({ q: query }));
+      setGifs(await getGifsByParams({ q: query, options: { limit: 20 } }));
       setloading(false);
     } catch (error) {
       setloading(false);
