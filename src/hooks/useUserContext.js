@@ -4,7 +4,7 @@ import { KEY_FAVORITES } from "../utils/constants";
 import useLocalStorage from "./useLocalStorage";
 
 export const isEmptyList = (list) => !list || list.length === 0;
-const preventDuplicity = (from, add) => from.filter((f) => f.id !== add.id);
+
 export default function useUserContext() {
   const [elements, setElements] = useLocalStorage(KEY_FAVORITES, []);
 
