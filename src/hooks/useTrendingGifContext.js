@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { fetchTrending } from "../fetchers";
 import { useGifState, useGifDispatch } from "../context/GifContext/hooks";
@@ -11,7 +11,8 @@ export default function useTrendingGifContext() {
   const { query } = useParams();
   const [loading, setloading] = useState(false);
   const [error, setError] = useState(false);
-  useEffect(async () => {
+
+  const refetch = useCallback(async () => {
     setloading(true);
     try {
       setTrendings(await getTrendingByParams({ q: query }));
@@ -20,7 +21,11 @@ export default function useTrendingGifContext() {
       setloading(false);
       setError(true);
     }
-  }, []);
+  }, [query, setTrendings, setloading, setError]);
+
+  useEffect(async () => {
+    await refetch();
+  }, [refetch]);
   return {
     loading,
     trendings,

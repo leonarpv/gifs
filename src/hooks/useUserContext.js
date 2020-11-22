@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from "react";
+import { useEffect } from "react";
 import { useUserDispatch, useUserState } from "../context/UserContext/hooks";
 import { KEY_FAVORITES } from "../utils/constants";
 import useLocalStorage from "./useLocalStorage";
@@ -26,7 +26,7 @@ export default function useUserContext() {
     if (elements) {
       addFavorite(elements);
     }
-  }, [addFavorite]);
+  }, [addFavorite, elements]);
 
   return {
     favorites,

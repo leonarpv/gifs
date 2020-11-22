@@ -20,7 +20,7 @@ export default function useSearchGifContext() {
       setloading(false);
       setError(true);
     }
-  }, []);
+  }, [query, setloading, setError]);
 
   useEffect(async () => {
     await refetch();
