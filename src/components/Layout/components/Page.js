@@ -17,6 +17,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 body {
+  background-color: ${(props) => props.theme.background.decondary};
+  font-family: ${(props) => props.theme.typography.type.secondary};
   width: 100vw;
   height: 100vh;
   display: block;
