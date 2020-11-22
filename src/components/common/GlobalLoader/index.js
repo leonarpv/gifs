@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledLoader } from "./styled";
 
-export default function Loader() {
+export default function GlobalLoader() {
   return (
     <StyledLoader
       css={`

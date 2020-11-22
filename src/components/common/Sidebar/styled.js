@@ -11,6 +11,7 @@ const StyledSidebar = styled.nav`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 9;
   transition: transform 0.3s ease-in-out;
 
   @media (max-width: 576px) {

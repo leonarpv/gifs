@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./../Item";
 import { ItemListWrapper } from "./styled";
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, title }) {
   return (
     <ItemListWrapper>
       {items ? (

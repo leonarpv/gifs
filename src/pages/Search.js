@@ -13,11 +13,7 @@ export const Search = () => {
       loading={loading}
       loadingText={`Searching ${querySearch}`}
     >
-      <ul>
-        {loading && <li>Cargando</li>}
-
-        {!loading && <SearchResults results={gifs} />}
-      </ul>
+      <SearchResults results={gifs} />
     </Layout>
   );
 };
