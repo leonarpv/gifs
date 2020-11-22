@@ -21,16 +21,14 @@ export const Layout = ({
 
   return (
     <Page {...rest}>
-      <LoadingOverlay active={loading} spinner text={loadingText}>
-        <StyledLayoutWrapper>
-          <Header />
-          <Sidebar open={sidebarOpen} />
-          <Burger open={sidebarOpen} setOpen={openSidebar} />
-          <SearchBar />
-          {children}
-          <Footer />
-        </StyledLayoutWrapper>
-      </LoadingOverlay>
+      <StyledLayoutWrapper>
+        <Header />
+        <Sidebar open={sidebarOpen} />
+        <Burger open={sidebarOpen} setOpen={openSidebar} />
+        <SearchBar />
+        {children}
+        <Footer />
+      </StyledLayoutWrapper>
     </Page>
   );
 };

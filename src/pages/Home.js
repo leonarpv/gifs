@@ -21,8 +21,6 @@ export const Home = () => {
     }
   };
 
-  const tabs = ["Tredings", "Favorites"];
-
   return (
     <Layout title={"Home"} loading={loading}>
       {!loading && <TrendingList trendings={trendings} />}
