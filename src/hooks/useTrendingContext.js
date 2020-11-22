@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useQuery, queryCache } from "react-query";
-import { KEY_GIFS, KEY_TRENDINGS } from "../utils/constants";
 import { fetchTrending } from "../fetchers";
-
-import { useGifState } from "../context/GifContext/hooks";
-import { useGifDispatch } from "../context/GifContext/hooks/useGifDispatch";
+import { useGifState, useGifDispatch } from "../context/GifContext/hooks";
 
 const getTrendingByParams = async (params) => fetchTrending(params);
 

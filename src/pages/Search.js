@@ -1,25 +1,18 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import ItemList from "../components/common/ItemList";
-import { SearchBox } from "../components/common/SearchBox";
+import { Layout } from "../components/Layout/Layout";
+import useSearchGifsContext from "../hooks/useSearchGifsContext";
 
-import useSearchGifs from "../hooks/useSearchGifs";
+export const Search = () => {
+  const { loading, gifs } = useSearchGifsContext();
 
-export const Search = ({ ...rest }) => {
-  const { isFetching, isError, data, refetch } = useSearchGifs();
-  const history = useHistory();
-  const onHandleSubmit = (value) => {
-    history.push(`/search/${value}`);
-    refetch();
-  };
   return (
-    <div>
-      <SearchBox placeholder="ingrese valor" handleSubmit={onHandleSubmit} />
+    <Layout title={"Search"}>
       <ul>
-        {isFetching && <li>Cargando</li>}
-        {isError && <li>Ocurió un error</li>}
-        {!isFetching && !isError && <ItemList gifs={data} />}
+        {loading && <li>Cargando</li>}
+
+        {!loading && <ItemList gifs={gifs} />}
       </ul>
-    </div>
+    </Layout>
   );
 };

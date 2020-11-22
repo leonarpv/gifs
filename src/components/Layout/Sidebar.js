@@ -1,12 +1,24 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
-
+import React from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
+import useSearchGifsContex from "../../hooks/useSearchGifsContext";
 import useUserContext from "../../hooks/useUserContext";
+import { SearchBox } from "../common/SearchBox";
 export const Sidebar = () => {
   const { favorites } = useUserContext();
-  console.log(favorites);
+  const { loading, refetch } = useSearchGifsContex();
+  const history = useHistory();
+  const { query } = useParams();
+  const onHandleSubmit = (value) => {
+    history.push(`/search/${value}`);
+    refetch();
+  };
   return (
     <div>
+      <SearchBox
+        placeholder="ingrese valor"
+        initialValue={query}
+        handleSubmit={onHandleSubmit}
+      />
       <ul>
         {favorites.map((gif, key) => (
           <li key={gif?.id.toString()}>
