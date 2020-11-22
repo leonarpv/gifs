@@ -3,11 +3,13 @@ export const TYPES = {
   RESET: "reset",
   SET_GIFS: "setGifs",
   SET_TRENDINGS: "setTrendings",
+  SET_GIF: "setGif",
 };
 
 export const contextInitialState = {
   gifs: [],
   trendings: [],
+  gif: null,
 };
 
 export const contextStateReducer = (state, { type, payload }) => {
@@ -17,6 +19,9 @@ export const contextStateReducer = (state, { type, payload }) => {
     }
     case TYPES.SET_TRENDINGS: {
       return regularSetter(state, "trendings", payload);
+    }
+    case TYPES.SET_GIF: {
+      return regularSetter(state, "gif", payload);
     }
     case TYPES.RESET: {
       return { ...contextInitialState };
