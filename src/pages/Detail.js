@@ -1,16 +1,15 @@
 import React from "react";
 import { Gif } from "@giphy/react-components";
-import { useParams } from "react-router-dom";
-import useDetailGif from "../hooks/useDetailGif";
-export const Detail = () => {
-  const { id } = useParams();
-  const { isFetching, isError, data } = useDetailGif(id);
+import useDetailGifContext from "../hooks/useDetailGifContext";
+import { Layout } from "../components/Layout/Layout";
 
+export const Detail = () => {
+  const { loading, gif } = useDetailGifContext();
+  console.log(gif);
   return (
-    <div>
-      {isFetching && <div>Cargando</div>}
-      {isError && <div>Ocurió un error</div>}
-      {!isFetching && <Gif gif={data} />}
-    </div>
+    <Layout title={gif?.title}>
+      {loading && <div>Cargando</div>}
+      {gif && <Gif gif={gif} />}
+    </Layout>
   );
 };
