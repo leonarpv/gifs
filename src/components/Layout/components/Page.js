@@ -4,30 +4,50 @@ import { Helmet } from "react-helmet";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-}
-body {
-  background-color: ${(props) => props.theme.background.decondary};
-  font-family: ${(props) => props.theme.typography.type.secondary};
-  width: 100vw;
-  height: 100vh;
-  display: block;
-}
-main{
-    width: 100%;
-    margin: auto;
-    max-width: 792px;
-}
+ html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0D0C1D;
+    color: #EFFFFA;
+    height: 100vh;
+    text-rendering: optimizeLegibility;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  img {
+    border-radius: 5px;
+    height: auto;
+    width: 10rem;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  small {
+    display: block;
+  }
+
+  a {
+    color: #343078;
+    text-decoration: none;
+  }
 
 `;
 

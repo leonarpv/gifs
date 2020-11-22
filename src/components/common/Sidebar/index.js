@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import useUserContext from "../../../hooks/useUserContext";
-export const Sidebar = () => {
+import StyledSidebar from "./styled";
+
+export const Sidebar = ({ open }) => {
   const { favorites } = useUserContext();
 
   return (
-    <div>
+    <StyledSidebar open={open}>
       <ul>
         {favorites.map((gif, key) => (
           <li key={gif?.id.toString()}>
@@ -14,6 +16,6 @@ export const Sidebar = () => {
         ))}
       </ul>
       <hr></hr>
-    </div>
+    </StyledSidebar>
   );
 };
