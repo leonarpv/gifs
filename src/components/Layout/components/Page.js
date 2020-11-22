@@ -14,14 +14,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #0D0C1D;
-    color: #EFFFFA;
-    height: 100vh;
-    text-rendering: optimizeLegibility;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #0D0C1D;
+  color: #EFFFFA;
+  text-rendering: optimizeLegibility;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
   }
 
   h1 {

@@ -4,10 +4,14 @@ import { Layout } from "../components/Layout";
 import useSearchGifContextt from "../hooks/useSearchGifContext";
 
 export const Search = () => {
-  const { loading, gifs } = useSearchGifContextt();
+  const { loading, gifs, querySearch } = useSearchGifContextt();
 
   return (
-    <Layout title={"Search"}>
+    <Layout
+      title={"Search"}
+      loading={loading}
+      loadingText={`Searching ${querySearch}`}
+    >
       <ul>
         {loading && <li>Cargando</li>}
 

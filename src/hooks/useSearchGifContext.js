@@ -30,5 +30,6 @@ export default function useSearchGifContext() {
     gifs,
     error,
     refetch,
+    querySearch: query,
   };
 }

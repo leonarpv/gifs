@@ -7,4 +7,6 @@ const StyledLayoutWrapper = styled.div`
   height: 100vh;
 `;
 
-export { StyledLayoutWrapper };
+const StyledTabContentWrapper = styled.div``;
+
+export { StyledLayoutWrapper, StyledTabContentWrapper };

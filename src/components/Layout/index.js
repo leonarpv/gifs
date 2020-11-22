@@ -1,4 +1,5 @@
 import React from "react";
+import LoadingOverlay from "react-loading-overlay";
 import { Sidebar, SearchBar } from "../common";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,19 +8,29 @@ import Burger from "../common/Burger";
 import { useUserDispatch, useUserState } from "../../context/UserContext/hooks";
 import { StyledLayoutWrapper } from "./styled";
 
-export const Layout = ({ children, history, match, ...rest }) => {
+export const Layout = ({
+  children,
+  history,
+  match,
+  loading,
+  loadingText = "Loading your content...",
+  ...rest
+}) => {
   const { sidebarOpen } = useUserState();
   const { openSidebar } = useUserDispatch();
 
   return (
     <Page {...rest}>
-      <StyledLayoutWrapper>
-        <Header />
-        <Sidebar open={sidebarOpen} />
-        <Burger open={sidebarOpen} setOpen={openSidebar} />
-        <SearchBar />
-        <Footer />
-      </StyledLayoutWrapper>
+      <LoadingOverlay active={loading} spinner text={loadingText}>
+        <StyledLayoutWrapper>
+          <Header />
+          <Sidebar open={sidebarOpen} />
+          <Burger open={sidebarOpen} setOpen={openSidebar} />
+          <SearchBar />
+          {children}
+          <Footer />
+        </StyledLayoutWrapper>
+      </LoadingOverlay>
     </Page>
   );
 };
