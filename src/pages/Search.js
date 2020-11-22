@@ -1,6 +1,7 @@
 import React from "react";
 import ItemList from "../components/common/ItemList";
 import { Layout } from "../components/Layout";
+import SearchResults from "../components/Search/SearchResults";
 import useSearchGifContextt from "../hooks/useSearchGifContext";
 
 export const Search = () => {
@@ -15,7 +16,7 @@ export const Search = () => {
       <ul>
         {loading && <li>Cargando</li>}
 
-        {!loading && <ItemList gifs={gifs} />}
+        {!loading && <SearchResults results={gifs} />}
       </ul>
     </Layout>
   );
