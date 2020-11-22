@@ -11,11 +11,14 @@ export default function useUserContext() {
   const { favorites } = useUserState();
   const { addFavorite } = useUserDispatch();
   const saveFavorite = (favorite) => {
-    const oldFavorites = favorites;
-    const newFavorites = [
-      ...preventDuplicity(oldFavorites, favorite),
-      favorite,
-    ];
+    const favIndex = favorites.findIndex((f) => f.id === favorite.id);
+    let newFavorites;
+    if (favIndex !== -1) {
+      newFavorites = favorites.filter((f) => f.id !== favorite.id);
+    } else {
+      newFavorites = [...favorites, favorite];
+    }
+
     setElements(newFavorites);
     addFavorite(newFavorites);
   };
@@ -23,7 +26,7 @@ export default function useUserContext() {
     if (elements) {
       addFavorite(elements);
     }
-  }, [favorites, elements]);
+  }, [addFavorite]);
 
   return {
     favorites,
