@@ -7,7 +7,11 @@ export const Home = () => {
 
   return (
     <Layout title={"Home"} loading={loading}>
-      <TrendingList loading={loading} trendings={trendings} />
+      <TrendingList
+        title="Trending gifs"
+        loading={loading}
+        trendings={trendings}
+      />
     </Layout>
   );
 };

@@ -7,5 +7,4 @@ export * from "./GlobalLoader";
 export * from "./Burger";
 export * from "./GlobalLoader";
 export * from "./Navigation";
-export * from "./Favorites";
 export * from "./Star";
