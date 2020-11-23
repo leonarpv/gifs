@@ -7,7 +7,9 @@ const getGif = async (id) => fetchGif(id);
 
 export default function useDetailGifContext() {
   const { id } = useParams();
-  const { gif } = useGifState();
+  const { gif, gifs } = useGifState();
+  const cachedGif = gifs.find((singleGif) => singleGif.id === id);
+
   const { setGif } = useGifDispatch();
   const [loading, setloading] = useState(false);
   const [error, setError] = useState(false);
@@ -24,8 +26,12 @@ export default function useDetailGifContext() {
   }, [id, setGif]);
 
   useEffect(async () => {
-    await fetchGif(id);
-  }, [id, fetchGif]);
+    if (!cachedGif) {
+      await fetchGif(id);
+    } else {
+      setGif(cachedGif);
+    }
+  }, [id, fetchGif, cachedGif]);
 
   return {
     loading,

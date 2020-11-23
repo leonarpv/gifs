@@ -6,7 +6,12 @@ import { Layout } from "../components/Layout";
 export const Detail = () => {
   const { loading, gif } = useDetailGifContext();
   return (
-    <Layout title="Detalles">
+    <Layout
+      title="Detalles"
+      placeholderSearch={`Search something more ${
+        gif?.title && `of ${gif?.title}`
+      }`}
+    >
       {gif && (
         <GifDetail loading={loading} image="downsized" noLink gif={gif} />
       )}

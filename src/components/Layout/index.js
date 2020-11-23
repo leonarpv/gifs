@@ -14,7 +14,7 @@ export const Layout = ({
   history,
   match,
   loading,
-  loadingText = "Loading your content...",
+  placeholderSearch = "search something cool..",
   ...rest
 }) => {
   const { sidebarOpen, favoritesOpen } = useUserState();
@@ -30,7 +30,7 @@ export const Layout = ({
         {!sidebarOpen && (
           <Star open={favoritesOpen} setOpen={setOpenFavorites} />
         )}
-        <SearchBar />
+        <SearchBar placeholderSearch={placeholderSearch} />
         {children}
         <Footer />
       </StyledLayoutWrapper>

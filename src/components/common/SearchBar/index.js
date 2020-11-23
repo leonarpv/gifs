@@ -4,7 +4,7 @@ import useSearchGifContext from "../../../hooks/useSearchGifContext";
 import { SearchBox } from "./SearchBox";
 import { StyledSearchBar } from "./styled";
 
-export const SearchBar = () => {
+export const SearchBar = ({ placeholderSearch = "" }) => {
   const { refetch } = useSearchGifContext();
   const { push } = useHistory();
   const { query } = useParams();
@@ -16,7 +16,7 @@ export const SearchBar = () => {
     <StyledSearchBar>
       <SearchBox
         initialValue={query}
-        placeholder="search something cool.."
+        placeholder={placeholderSearch}
         handleSubmit={onHandleSubmit}
       />
     </StyledSearchBar>

@@ -4,6 +4,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-self: center;
+  min-height: 50%;
   border-radius: 2em;
 `;
 

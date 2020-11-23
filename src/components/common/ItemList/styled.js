@@ -6,6 +6,7 @@ const ItemListWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-content: stretch;
+  min-height: 50%;
 `;
 
 const ListTitleWrapper = styled.div`
