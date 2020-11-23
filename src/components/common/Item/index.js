@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ItemFav from "../ItemFav";
 import { ItemWrapper, ItemInfoWrapper, ItemInfo, ItemImage } from "./styled";
 
-export default function Item({ gif }) {
+export default function Item({ gif, itemNoTitle = false }) {
   const { title, id, images, bitlyUrl, image = "original" } = gif;
 
   return (
@@ -12,9 +12,7 @@ export default function Item({ gif }) {
       <ItemInfoWrapper>
         <ItemFav gif={gif} />
         <ItemInfo>
-          <Link to={`/gif/${id}`}>
-            <h1>{title}</h1>
-          </Link>
+          <Link to={`/gif/${id}`}>{!itemNoTitle && <h1>{title}</h1>}</Link>
         </ItemInfo>
       </ItemInfoWrapper>
       {images[image] && (

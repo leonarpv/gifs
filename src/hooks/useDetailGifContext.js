@@ -26,8 +26,6 @@ export default function useDetailGifContext() {
     setloading(true);
 
     await fetchGif(id);
-
-    return () => console.log("prueba");
   }, [id]);
 
   return {

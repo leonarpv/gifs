@@ -69,37 +69,3 @@ const ItemImage = styled.img`
 `;
 
 export { ItemWrapper, ItemInfoWrapper, ItemInfo, ItemImage };
-
-/*
-
-      <a        
-        href={res.loadedUrl}
-        ref="image"
-        title={res.title}
-        target="_blank"
-        className={classes}
-        style={{backgroundColor: backgroundColor}}
-      >        
-        <div className="image-info-wrapper">
-          <div className="image-type">
-            <h1>{res.type}</h1>
-          </div>
-          <div className="image-info">
-            <div className="image-title">
-              <h1>{res.title}</h1>
-            </div>
-            <div className="image-url">
-              <h1>{res.bitlyUrl}</h1>
-            </div>
-          </div>
-          <div className="image-view-icon">
-            <i className="far fa-eye"/>
-          </div>
-        </div>
-        <div className="image-loading-icon-wrapper">
-          <div className="image-loading-icon"/>
-        </div>
-        <img className="loaded-image" src={res.loadedUrl} onLoad={this.handleOnLoad}/>
-        <img className="unloaded-image" src={res.unloadedUrl} onLoad={this.handleOnLoad}/>
-      </a>
-      */
