@@ -15,7 +15,7 @@ function App() {
               <Fragment>
                 <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route path="/search/:query" component={Search} />
+                  <Route path="/search/:query?" component={Search} />
                   <Route path="/gif/:id" component={Detail} />
                 </Switch>
               </Fragment>

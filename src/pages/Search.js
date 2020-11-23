@@ -13,7 +13,16 @@ export const Search = () => {
       loading={loading}
       loadingText={`Searching ${querySearch}`}
     >
-      <SearchResults results={gifs} title={`${querySearch} results...`} />
+      <SearchResults
+        results={gifs}
+        title={
+          querySearch
+            ? `${
+                loading ? `Searching` : ` ${gifs.length} results for`
+              } ${querySearch} results...`
+            : `Nothing to search? please type something...`
+        }
+      />
     </Layout>
   );
 };
