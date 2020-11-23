@@ -25,7 +25,6 @@ const ItemWrapper = styled.div`
 const ItemInfoWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  cursor: pointer;
   height: 100%;
   left: 0px;
   position: absolute;

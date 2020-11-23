@@ -1,7 +1,7 @@
 import styled from "styled-components";
 const StyledStar = styled.span`
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,9 @@ const StyledStar = styled.span`
   color: ${(props) => (props.open ? "#0D0C1D" : "#effffa")};
   font-size: 48px;
   z-index: 10;
+  :hover {
+    cursor: pointer;
+  }
   :active {
     border: unset;
   }
