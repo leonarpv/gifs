@@ -10,7 +10,7 @@ const StyledStar = styled.span`
   height: 2rem;
   background: transparent;
   border: none;
-  color: ${(props) => (props.open ? "#0D0C1D" : "#effffa")};
+  color: ${(props) => (props.open ? "#0D0C1D" : "#FFD433")};
   font-size: 48px;
   z-index: 10;
   :hover {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FavWrapper = styled.div`
+const FavWrapper = styled.span`
   margin: 10px;
   font-size: 24px;
   z-index: 9;
