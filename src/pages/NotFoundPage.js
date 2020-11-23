@@ -6,6 +6,7 @@ import useSearchGifContextt from "../hooks/useSearchGifContext";
 export const NotFoundPage = () => {
   return (
     <Layout
+      notFound
       title={"Not found"}
       placeholderSearch="Nothing to search? please type something..."
     ></Layout>

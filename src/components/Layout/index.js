@@ -14,6 +14,7 @@ export const Layout = ({
   history,
   match,
   loading,
+  notFound = false,
   placeholderSearch = "search something cool..",
   ...rest
 }) => {
@@ -26,8 +27,10 @@ export const Layout = ({
         <Header />
         <Navigation open={sidebarOpen} />
         <FavoritesBar open={favoritesOpen} />
-        {!favoritesOpen && <Burger open={sidebarOpen} setOpen={openSidebar} />}
-        {!sidebarOpen && (
+        {!favoritesOpen && !notFound && (
+          <Burger open={sidebarOpen} setOpen={openSidebar} />
+        )}
+        {!sidebarOpen && !notFound && (
           <Star open={favoritesOpen} setOpen={setOpenFavorites} />
         )}
         <SearchBar placeholderSearch={placeholderSearch} />
