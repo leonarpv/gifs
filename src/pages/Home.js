@@ -8,6 +8,8 @@ export const Home = () => {
   return (
     <Layout title={"Home"} loading={loading}>
       <TrendingList
+        height="200"
+        width="200"
         title="Trending gifs"
         loading={loading}
         trendings={trendings}

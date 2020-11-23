@@ -3,6 +3,7 @@ import Item from "./../Item";
 import { ItemListWrapper, ListTitleWrapper, ListTitle } from "./styled";
 
 export default function ItemList({ items, title, ...rest }) {
+  console.log(rest);
   return (
     <ItemListWrapper>
       <ListTitleWrapper>

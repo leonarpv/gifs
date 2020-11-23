@@ -4,9 +4,8 @@ const ItemListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: stretch;
-  padding: 0;
 `;
 
 const ListTitleWrapper = styled.div`

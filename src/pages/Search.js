@@ -15,6 +15,8 @@ export const Search = () => {
     >
       <SearchResults
         results={gifs}
+        height="200"
+        width="200"
         title={
           querySearch
             ? `${

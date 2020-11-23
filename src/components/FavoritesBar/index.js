@@ -9,7 +9,13 @@ export const FavoritesBar = ({ open }) => {
   const { favorites } = useUserState();
   return (
     <Sidebar open={open}>
-      <FavoritesList itemNoTitle title="Your favorites" favorites={favorites} />
+      <FavoritesList
+        height="150"
+        width="150"
+        itemNoTitle
+        title="Your favorites"
+        favorites={favorites}
+      />
     </Sidebar>
   );
 };

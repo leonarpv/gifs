@@ -8,7 +8,9 @@ export const Detail = () => {
   const { loading, gif } = useDetailGifContext();
   return (
     <Layout title="Detalles">
-      {gif && <GifDetail loading={loading} noLink gif={gif} />}
+      {gif && (
+        <GifDetail loading={loading} image="downsized" noLink gif={gif} />
+      )}
     </Layout>
   );
 };

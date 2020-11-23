@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import ItemFav from "../ItemFav";
 import { ItemWrapper, ItemInfoWrapper, ItemInfo, ItemImage } from "./styled";
 
-export default function Item({ gif, itemNoTitle = false }) {
+export default function Item({ gif, itemNoTitle = false, ...rest }) {
   const { title, id, images, bitlyUrl, image = "original" } = gif;
 
   return (
     // onMouseOver={}
-    <ItemWrapper>
+    <ItemWrapper {...rest}>
       <ItemInfoWrapper>
         <ItemFav gif={gif} />
         <ItemInfo>

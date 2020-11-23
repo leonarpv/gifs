@@ -5,16 +5,15 @@ const ItemWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   display: inline-block;
-  height: 200px;
   margin-left: 20px;
   margin-top: 20px;
   overflow: hidden;
   position: relative;
-  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  height: ${(props) => (props.height ? `${props.height}px` : "unset")};
+  width: ${(props) => (props.width ? `${props.width}px` : "unset")};
   a {
     color: -webkit-link;
     cursor: pointer;
