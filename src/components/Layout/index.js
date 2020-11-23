@@ -29,7 +29,6 @@ export const Layout = ({
         {!sidebarOpen && (
           <Star open={favoritesOpen} setOpen={setOpenFavorites} />
         )}
-
         <SearchBar />
         {children}
         <Footer />

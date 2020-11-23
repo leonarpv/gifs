@@ -18,6 +18,7 @@ const ItemWrapper = styled.div`
   a {
     color: -webkit-link;
     cursor: pointer;
+    text-decoration: unset;
     color: white;
   }
 `;
