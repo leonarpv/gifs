@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Page from "./components/Page";
 import Burger from "../common/Burger";
+import Star from "../common/Star";
 import { useUserDispatch, useUserState } from "../../context/UserContext/hooks";
 import { StyledLayoutWrapper } from "./styled";
 
@@ -23,7 +24,7 @@ export const Layout = ({
       <StyledLayoutWrapper>
         <Header />
         <Navigation open={sidebarOpen} />
-        <Burger open={sidebarOpen} setOpen={openSidebar} />
+        <Star open={sidebarOpen} setOpen={openSidebar} />
         <SearchBar />
         {children}
         <Footer />
