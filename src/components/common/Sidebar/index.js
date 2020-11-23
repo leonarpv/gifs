@@ -9,9 +9,3 @@ export const Sidebar = ({ children, open, ...rest }) => {
     </StyledSidebar>
   );
 };
-/*
- {favorites.map((gif, key) => (
-          <li key={gif?.id.toString()}>
-            <Link to={`/gif/${gif.id}`}>{gif.title}</Link>
-          </li>
-        ))}*/

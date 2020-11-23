@@ -4,6 +4,6 @@ import ItemList from "../../common/ItemList";
 
 const ListWithLoading = GlobalLoader(ItemList);
 
-export default function TrendingList({ trendings = [], loading }) {
-  return <ListWithLoading isLoadings={loading} items={trendings} />;
+export default function TrendingList({ trendings = [], loading, ...rest }) {
+  return <ListWithLoading isLoadings={loading} items={trendings} {...rest} />;
 }

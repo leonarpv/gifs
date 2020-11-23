@@ -9,4 +9,12 @@ const ItemListWrapper = styled.div`
   padding: 0;
 `;
 
-export { ItemListWrapper };
+const ListTitleWrapper = styled.div`
+  text-align: center;
+  width: 100%;
+`;
+const ListTitle = styled.h1`
+  font-size: 48px;
+`;
+
+export { ItemListWrapper, ListTitleWrapper, ListTitle };

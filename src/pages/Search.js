@@ -13,7 +13,7 @@ export const Search = () => {
       loading={loading}
       loadingText={`Searching ${querySearch}`}
     >
-      <SearchResults results={gifs} />
+      <SearchResults results={gifs} title={`${querySearch} results...`} />
     </Layout>
   );
 };

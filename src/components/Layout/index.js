@@ -1,5 +1,5 @@
 import React from "react";
-import { Favorites, SearchBar, Navigation } from "../common";
+import { SearchBar, Navigation } from "../common";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Page from "./components/Page";
@@ -7,6 +7,7 @@ import Burger from "../common/Burger";
 import Star from "../common/Star";
 import { useUserDispatch, useUserState } from "../../context/UserContext/hooks";
 import { StyledLayoutWrapper } from "./styled";
+import { FavoritesBar } from "../FavoritesBar";
 
 export const Layout = ({
   children,
@@ -24,7 +25,7 @@ export const Layout = ({
       <StyledLayoutWrapper>
         <Header />
         <Navigation open={sidebarOpen} />
-        <Favorites open={favoritesOpen} />
+        <FavoritesBar open={favoritesOpen} />
         {!favoritesOpen && <Burger open={sidebarOpen} setOpen={openSidebar} />}
         {!sidebarOpen && (
           <Star open={favoritesOpen} setOpen={setOpenFavorites} />

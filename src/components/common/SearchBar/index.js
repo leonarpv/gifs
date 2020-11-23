@@ -14,7 +14,11 @@ export const SearchBar = () => {
   };
   return (
     <StyledSearchBar>
-      <SearchBox initialValue={query} handleSubmit={onHandleSubmit} />
+      <SearchBox
+        initialValue={query}
+        placeholder="search something cool.."
+        handleSubmit={onHandleSubmit}
+      />
     </StyledSearchBar>
   );
 };
