@@ -3,11 +3,13 @@ export const TYPES = {
   RESET: "reset",
   ADD_FAVORITE: "addFavorite",
   OPEN_SIDEBAR: "openSidebar",
+  OPEN_FAVORITES: "setOpenFavorites",
 };
 
 export const contextInitialState = {
   favorites: [],
   sidebarOpen: false,
+  favoritesOpen: false,
 };
 
 export const contextStateReducer = (state, { type, payload }) => {
@@ -17,6 +19,9 @@ export const contextStateReducer = (state, { type, payload }) => {
     }
     case TYPES.OPEN_SIDEBAR: {
       return regularSetter(state, "sidebarOpen", payload);
+    }
+    case TYPES.OPEN_FAVORITES: {
+      return regularSetter(state, "favoritesOpen", payload);
     }
     case TYPES.RESET: {
       return { ...contextInitialState };

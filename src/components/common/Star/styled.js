@@ -1,8 +1,8 @@
 import styled from "styled-components";
-const StyledStar = styled.button`
+const StyledStar = styled.span`
   position: absolute;
-  top: 5%;
-  left: 2rem;
+  top: 10%;
+  left: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -10,8 +10,11 @@ const StyledStar = styled.button`
   height: 2rem;
   background: transparent;
   border: none;
-  color: white;
-  font-size: 24px;
+  color: ${(props) => (props.open ? "#0D0C1D" : "#effffa")};
+  font-size: 48px;
   z-index: 10;
+  :active {
+    border: unset;
+  }
 `;
 export default StyledStar;

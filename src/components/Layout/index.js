@@ -16,15 +16,20 @@ export const Layout = ({
   loadingText = "Loading your content...",
   ...rest
 }) => {
-  const { sidebarOpen } = useUserState();
-  const { openSidebar } = useUserDispatch();
+  const { sidebarOpen, favoritesOpen } = useUserState();
+  const { openSidebar, setOpenFavorites } = useUserDispatch();
 
   return (
     <Page {...rest}>
       <StyledLayoutWrapper>
         <Header />
         <Navigation open={sidebarOpen} />
-        <Star open={sidebarOpen} setOpen={openSidebar} />
+        <Favorites open={favoritesOpen} />
+        {!favoritesOpen && <Burger open={sidebarOpen} setOpen={openSidebar} />}
+        {!sidebarOpen && (
+          <Star open={favoritesOpen} setOpen={setOpenFavorites} />
+        )}
+
         <SearchBar />
         {children}
         <Footer />

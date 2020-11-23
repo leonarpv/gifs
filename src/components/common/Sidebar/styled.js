@@ -18,8 +18,10 @@ const StyledSidebar = styled.nav`
     width: 100%;
   }
   ul {
+    list-style-type: none;
     li {
       margin: 20px;
+      color: #0d0c1d;
     }
   }
   a {

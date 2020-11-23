@@ -8,11 +8,15 @@ export const Favorites = ({ open }) => {
   return (
     <Sidebar open={open}>
       <ul>
-        {favorites.map((gif, key) => (
-          <li key={gif?.id.toString()}>
-            <Link to={`/gif/${gif.id}`}>{gif.title}</Link>
-          </li>
-        ))}
+        {favorites.length ? (
+          favorites.map((gif, key) => (
+            <li key={gif?.id.toString()}>
+              <Link to={`/gif/${gif.id}`}>{gif.title}</Link>
+            </li>
+          ))
+        ) : (
+          <li>No tienes Favoritos</li>
+        )}
       </ul>
     </Sidebar>
   );
