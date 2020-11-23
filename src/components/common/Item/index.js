@@ -4,10 +4,9 @@ import ItemFav from "../ItemFav";
 import { ItemWrapper, ItemInfoWrapper, ItemInfo, ItemImage } from "./styled";
 
 export default function Item({ gif, itemNoTitle = false, ...rest }) {
-  const { title, id, images, bitlyUrl, image = "original" } = gif;
+  const { title, id, images, image = "original" } = gif;
 
   return (
-    // onMouseOver={}
     <ItemWrapper {...rest}>
       <ItemInfoWrapper>
         <ItemFav gif={gif} />

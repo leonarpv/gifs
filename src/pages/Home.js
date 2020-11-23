@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TrendingList from "../components/Home/TrendingList";
 import { Layout } from "../components/Layout";
 import useTrendingGifContext from "../hooks/useTrendingGifContext";

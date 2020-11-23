@@ -1,5 +1,4 @@
 import React from "react";
-import ItemList from "../components/common/ItemList";
 import { Layout } from "../components/Layout";
 import SearchResults from "../components/Search/SearchResults";
 import useSearchGifContextt from "../hooks/useSearchGifContext";

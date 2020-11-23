@@ -5,7 +5,7 @@ import { SearchBox } from "./SearchBox";
 import { StyledSearchBar } from "./styled";
 
 export const SearchBar = () => {
-  const { loading, refetch } = useSearchGifContext();
+  const { refetch } = useSearchGifContext();
   const { push } = useHistory();
   const { query } = useParams();
   const onHandleSubmit = (value) => {

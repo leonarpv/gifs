@@ -1,5 +1,4 @@
 import React from "react";
-import { Gif } from "@giphy/react-components";
 import useDetailGifContext from "../hooks/useDetailGifContext";
 import GifDetail from "../components/Detail/GifDetail";
 import { Layout } from "../components/Layout";

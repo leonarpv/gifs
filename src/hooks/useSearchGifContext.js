@@ -24,7 +24,7 @@ export default function useSearchGifContext() {
 
   useEffect(async () => {
     await refetch();
-  }, [refetch]);
+  }, [refetch, query]);
   return {
     loading,
     gifs,

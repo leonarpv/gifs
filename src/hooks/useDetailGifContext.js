@@ -13,6 +13,7 @@ export default function useDetailGifContext() {
   const [error, setError] = useState(false);
 
   const fetchGif = useCallback(async () => {
+    setloading(true);
     try {
       setGif(await getGif(id));
       setloading(false);
@@ -20,13 +21,11 @@ export default function useDetailGifContext() {
       setloading(false);
       setError(true);
     }
-  }, [id]);
+  }, [id, setGif]);
 
   useEffect(async () => {
-    setloading(true);
-
     await fetchGif(id);
-  }, [id]);
+  }, [id, fetchGif]);
 
   return {
     loading,
