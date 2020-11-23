@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, SearchBar } from "../common";
+import { Favorites, SearchBar, Navigation } from "../common";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Page from "./components/Page";
@@ -22,7 +22,7 @@ export const Layout = ({
     <Page {...rest}>
       <StyledLayoutWrapper>
         <Header />
-        <Sidebar open={sidebarOpen} />
+        <Navigation open={sidebarOpen} />
         <Burger open={sidebarOpen} setOpen={openSidebar} />
         <SearchBar />
         {children}

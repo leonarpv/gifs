@@ -1,20 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useUserContext from "../../../hooks/useUserContext";
 import StyledSidebar from "./styled";
 
-export const Sidebar = ({ open }) => {
+export const Sidebar = ({ children, open, ...rest }) => {
   return (
-    <StyledSidebar open={open}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/search">Search</Link>
-        </li>
-      </ul>
-      <hr></hr>
+    <StyledSidebar open={open} {...rest}>
+      {children}
     </StyledSidebar>
   );
 };

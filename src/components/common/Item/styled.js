@@ -11,6 +11,9 @@ const ItemWrapper = styled.div`
   overflow: hidden;
   position: relative;
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   a {
     color: -webkit-link;
@@ -29,6 +32,23 @@ const ItemInfoWrapper = styled.div`
   top: 0px;
   width: 100%;
   z-index: 5;
+  .image-view-icon {
+    background-color: rgba(black, 0.7);
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    i {
+      color: white;
+      font-size: 3em;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
 `;
 
 const ItemInfo = styled.div`

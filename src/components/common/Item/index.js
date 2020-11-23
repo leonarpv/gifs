@@ -12,6 +12,9 @@ export default function Item({ gif }) {
           <ItemInfo>
             <h1>{title}</h1>
           </ItemInfo>
+          <div className="image-view-icon">
+            <i className="far fa-eye" />
+          </div>
         </ItemInfoWrapper>
         {images[image] && (
           <ItemImage
